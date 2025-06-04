@@ -1,0 +1,1361 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../inicio/">
+      
+      
+        <link rel="next" href="../product/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Exchange - Documentação EKS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exchange-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentação EKS" class="md-header__button md-logo" aria-label="Documentação EKS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação EKS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exchange
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentação EKS" class="md-nav__button md-logo" aria-label="Documentação EKS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação EKS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Individual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Individual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inicio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Exchange
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exchange
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-e-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologias e Dependências
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tecnologias e Dependências">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-dependencias-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Dependências (requirements.txt)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descricao-do-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição do Endpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-funcionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluxo de Funcionamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-codigo-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura do Código (main.py)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura do Código (main.py)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalhes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalhes Importantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis de Ambiente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-executar-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Executar Localmente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-de-fluxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Fluxo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideracoes-finais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerações Finais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Order
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jenkins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jenkins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bottlenecks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BottleNeck
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repositorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Repositorios e Checkpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projeto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projeto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/AWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/EKS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EKS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/TesteDeCarga/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de Carga
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projeto/analiseDeCusto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analise de Custo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-e-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologias e Dependências
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tecnologias e Dependências">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-dependencias-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Dependências (requirements.txt)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descricao-do-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição do Endpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-funcionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluxo de Funcionamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-codigo-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura do Código (main.py)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura do Código (main.py)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalhes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalhes Importantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis de Ambiente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-executar-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Executar Localmente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-de-fluxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de Fluxo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideracoes-finais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerações Finais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exchange-api">Exchange API<a class="headerlink" href="#exchange-api" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A <strong>Exchange API</strong> é um microsserviço desenvolvido em Python com <strong>FastAPI</strong> que permite converter valores entre duas moedas qualquer, utilizando uma fonte externa de taxas de câmbio (no caso, a <strong>AwesomeAPI</strong>). O serviço expõe um único endpoint HTTP <code>GET /exchange/{from_currency}/{to_currency}</code>, que recebe os códigos das moedas de origem e destino, consulta a API externa, e retorna o valor de venda, o valor de compra, a data/hora da última cotação e o <code>id-account</code> do usuário (injetado via header).</p>
+<hr />
+<h2 id="tecnologias-e-dependencias">Tecnologias e Dependências<a class="headerlink" href="#tecnologias-e-dependencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Linguagem:</strong> Python 3.8+  </li>
+<li><strong>Framework Web:</strong> FastAPI  </li>
+<li><strong>Cliente HTTP:</strong> requests  </li>
+<li><strong>Servidor ASGI (desenvolvimento):</strong> Uvicorn  </li>
+<li><strong>Fonte de taxas de câmbio:</strong> AwesomeAPI (padrão)  </li>
+<li><strong>Variáveis de ambiente (opcionais):</strong>  </li>
+<li><code>EXTERNAL_API_URL</code> (URL base da API de câmbio; default: <code>https://economia.awesomeapi.com.br/last</code>)  </li>
+<li><code>PORT</code> (porta para execução via Uvicorn; default: 8000)  </li>
+</ul>
+<h3 id="principais-dependencias-requirementstxt">Principais Dependências (requirements.txt)<a class="headerlink" href="#principais-dependencias-requirementstxt" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>txt
+fastapi
+uvicorn
+requests
+</code></pre></div>
+<h2 id="descricao-do-endpoint">Descrição do Endpoint<a class="headerlink" href="#descricao-do-endpoint" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>http GET /exchange/{from_currency}/{to_currency}
+</code></pre></div>
+<ul>
+<li>
+<p><strong>Parâmetros de caminho (path parameters):</strong></p>
+</li>
+<li>
+<p><code>from_currency</code> (string): Código da moeda de origem (por exemplo, <code>USD</code>, <code>EUR</code>, <code>BRL</code>).</p>
+</li>
+<li>
+<p><code>to_currency</code> (string): Código da moeda de destino (por exemplo, <code>BRL</code>, <code>USD</code>).</p>
+</li>
+<li>
+<p><strong>Headers obrigatórios:</strong></p>
+</li>
+<li>
+<p><code>id-account</code> (string): Identificador da conta/usuário que faz a requisição. Caso não seja enviado, a API retorna <strong>HTTP 401 Unauthorized</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing id-account header&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Resposta de Sucesso (HTTP 200):</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;sell&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.82</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;buy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-09-01 14:23:42&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id-account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0195ae95-5be7-7dd3-b35d-7a7d87c404fb&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>sell</code> (float): Taxa de venda (ask) da moeda de destino em relação à moeda de origem.</li>
+<li><code>buy</code> (float): Taxa de compra (bid) da moeda de destino em relação à moeda de origem.</li>
+<li><code>date</code> (string): Timestamp da última cotação (formato <code>YYYY-MM-DD HH:MM:SS</code>).</li>
+<li>
+<p><code>id-account</code> (string): Mesmo valor enviado no header, para rastreabilidade.</p>
+</li>
+<li>
+<p><strong>Possíveis Códigos de Erro:</strong></p>
+</li>
+<li>
+<p><strong>401 Unauthorized</strong>: Header <code>id-account</code> ausente.</p>
+</li>
+<li>
+<p><strong>503 Service Unavailable</strong>: Falha ao consultar a API externa (AwesomeAPI) ou timeout.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Erro ao consultar a API externa de câmbio.&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h2 id="fluxo-de-funcionamento">Fluxo de Funcionamento<a class="headerlink" href="#fluxo-de-funcionamento" title="Permanent link">&para;</a></h2>
+<ol>
+<li>O cliente envia uma requisição <code>GET /exchange/{from_currency}/{to_currency}</code> incluindo o header <code>id-account</code>, por exemplo:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>GET /exchange/USD/BRL
+Headers:
+  id-account: 0195ae95-5be7-7dd3-b35d-7a7d87c404fb
+</code></pre></div>
+<ol>
+<li>
+<p>A aplicação FastAPI faz validação:</p>
+</li>
+<li>
+<p>Se o header <code>id-account</code> não estiver presente, retorna <strong>401 Unauthorized</strong>.</p>
+</li>
+<li>
+<p>Constrói a <em>currency pair</em> em formato <code>{FROM}-{TO}</code> (por exemplo, <code>USD-BRL</code>).</p>
+</li>
+<li>
+<p>Conecta na API externa <strong>AwesomeAPI</strong> (ou outra configurada via <code>EXTERNAL_API_URL</code>):</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>GET https://economia.awesomeapi.com.br/last/USD-BRL
+</code></pre></div>
+<ol>
+<li>
+<p>Se a chamada à API externa for bem-sucedida:</p>
+</li>
+<li>
+<p>Extrai o objeto JSON retornado, que contém as chaves <code>ask</code>, <code>bid</code> e <code>timestamp</code> para a pair <code>"USDBRL"</code>.</p>
+</li>
+<li>Converte <code>ask</code> e <code>bid</code> para <code>float</code>.</li>
+<li>Transforma o <code>timestamp</code> (unidade: segundos) em data/hora no formato <code>YYYY-MM-DD HH:MM:SS</code>.</li>
+<li>
+<p>Retorna JSON com <code>sell</code>, <code>buy</code>, <code>date</code> e repassa o <code>id-account</code>.</p>
+</li>
+<li>
+<p>Se ocorrer qualquer erro (timeout, par inexistente, resposta inválida), retorna <strong>503 Service Unavailable</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="estrutura-do-codigo-mainpy">Estrutura do Código (<code>main.py</code>)<a class="headerlink" href="#estrutura-do-codigo-mainpy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Request</span><span class="p">,</span> <span class="n">HTTPException</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Exchange API&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Converte valores entre duas moedas usando uma fonte externa (AwesomeAPI).&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># URL da API de câmbio externa</span>
+<span class="n">EXTERNAL_API_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EXTERNAL_API_URL&quot;</span><span class="p">,</span> <span class="s2">&quot;https://economia.awesomeapi.com.br/last&quot;</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/exchange/</span><span class="si">{from_currency}</span><span class="s2">/</span><span class="si">{to_currency}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_currency</span><span class="p">(</span><span class="n">from_currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">to_currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="c1"># Verifica se o header com o ID da conta está presente (injetado pelo gateway)</span>
+    <span class="n">account_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id-account&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">account_id</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">401</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Missing id-account header&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Ex: USD-BRL</span>
+    <span class="n">pair</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">from_currency</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">to_currency</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">EXTERNAL_API_URL</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">pair</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">from_currency</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">to_currency</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">quote</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="mi">503</span><span class="p">,</span>
+            <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Erro ao consultar a API externa de câmbio.&quot;</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exc</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;sell&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="s2">&quot;ask&quot;</span><span class="p">]),</span>
+        <span class="s2">&quot;buy&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="s2">&quot;bid&quot;</span><span class="p">]),</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;id-account&quot;</span><span class="p">:</span> <span class="n">account_id</span>
+    <span class="p">}</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">uvicorn</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PORT&quot;</span><span class="p">,</span> <span class="s2">&quot;8000&quot;</span><span class="p">))</span> 
+    <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;main:app&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">reload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="detalhes-importantes">Detalhes Importantes<a class="headerlink" href="#detalhes-importantes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Framework FastAPI:</strong></p>
+</li>
+<li>
+<p>Cria automaticamente documentação interativa (Swagger UI) em <code>/docs</code> e Redoc em <code>/redoc</code>.</p>
+</li>
+<li>Valida tipos de parâmetros e retorna erros 422 caso os formats estejam incorretos.</li>
+<li>
+<p><strong>Validação de Header:</strong></p>
+</li>
+<li>
+<p>A <code>id-account</code> deve ser injetada pelo serviço de API Gateway antes de encaminhar a requisição a este microsserviço.</p>
+</li>
+<li>Sem esse header, a requisição é negada – garantindo rastreabilidade da conta solicitante.</li>
+<li>
+<p><strong>Chave de Consulta (<code>key</code>) no JSON Externo:</strong></p>
+</li>
+<li>
+<p>A AwesomeAPI devolve um JSON onde a chave principal é a concatenação das moedas: <code>"USDBRL": { "ask": "...", "bid": "...", ... }</code>.</p>
+</li>
+<li>Por isso, é importante normalizar as strings para <strong>MAIÚSCULAS</strong>.</li>
+<li>
+<p><strong>Tratamento de Erros:</strong></p>
+</li>
+<li>
+<p>Se o par de moedas for inválido, se a API externa estiver fora do ar ou retornar erro 4xx/5xx, a rota retorna <strong>503 Service Unavailable</strong> com mensagem genérica.</p>
+</li>
+<li>
+<p><strong>Formato de Data:</strong></p>
+</li>
+<li>
+<p>A <code>timestamp</code> retornada pela API externa vem em segundos desde 1970. Convertida para <code>YYYY-MM-DD HH:MM:SS</code> para legibilidade.</p>
+</li>
+</ul>
+<hr />
+<h2 id="variaveis-de-ambiente">Variáveis de Ambiente<a class="headerlink" href="#variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><code>EXTERNAL_API_URL</code> (opcional)
+  URL base da fonte de taxas de câmbio.</p>
+</li>
+<li>
+<p><strong>Default:</strong> <code>https://economia.awesomeapi.com.br/last</code></p>
+</li>
+<li>
+<p>Exemplo para outra API:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">EXTERNAL_API_URL</span><span class="o">=</span><span class="s2">&quot;https://api.exchangerate-api.com/v4/latest&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>PORT</code> (opcional)
+  Porta TCP em que o Uvicorn irá expor o serviço.</p>
+</li>
+<li>
+<p><strong>Default:</strong> <code>8000</code></p>
+</li>
+</ul>
+<hr />
+<h2 id="como-executar-localmente">Como Executar Localmente<a class="headerlink" href="#como-executar-localmente" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Clonar o repositório</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL-do-repositório&gt;
+<span class="nb">cd</span><span class="w"> </span>exchange-service
+</code></pre></div>
+<ol>
+<li><strong>Criar e ativar um ambiente virtual (recomendado)</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div>
+<ol>
+<li><strong>Instalar dependências</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>fastapi<span class="w"> </span>uvicorn<span class="w"> </span>requests
+</code></pre></div>
+<ol>
+<li><strong>Configurar variáveis de ambiente (opcional)</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">EXTERNAL_API_URL</span><span class="o">=</span><span class="s2">&quot;https://economia.awesomeapi.com.br/last&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PORT</span><span class="o">=</span><span class="m">8000</span>
+</code></pre></div>
+<ol>
+<li><strong>Iniciar o servidor</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="si">${</span><span class="nv">PORT</span><span class="k">:-</span><span class="nv">8000</span><span class="si">}</span><span class="w"> </span>--reload
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Testar no navegador ou via curl</strong>:</p>
+</li>
+<li>
+<p>Documentação interativa:</p>
+<p><div class="highlight"><pre><span></span><code>http://localhost:8000/docs
+</code></pre></div>
+   * Exemplo de requisição com <code>curl</code>:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;id-account: 0195ae95-5be7-7dd3-b35d-7a7d87c404fb&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>http://localhost:8000/exchange/USD/BRL
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h2 id="exemplo-de-uso">Exemplo de Uso<a class="headerlink" href="#exemplo-de-uso" title="Permanent link">&para;</a></h2>
+<p><strong>Requisição:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/exchange/EUR/GBP</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">localhost:8000</span>
+<span class="na">id-account</span><span class="o">:</span> <span class="l">0195ae95-5be7-7dd3-b35d-7a7d87c404fb</span>
+</code></pre></div>
+<p><strong>Resposta (200 OK):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;sell&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8582</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;buy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8521</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-09-01 14:23:42&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id-account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0195ae95-5be7-7dd3-b35d-7a7d87c404fb&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="diagrama-de-fluxo">Diagrama de Fluxo<a class="headerlink" href="#diagrama-de-fluxo" title="Permanent link">&para;</a></h2>
+<p><img alt="Alt text" src="../exchanged.png" title="" /></p>
+<hr />
+<h2 id="consideracoes-finais">Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A <strong>Exchange API</strong> provê um serviço simples, mas essencial, para qualquer sistema de pagamentos, e-commerce ou plataforma financeira que precise de cotações em tempo real.</li>
+<li>
+<p>É possível estender o código para:</p>
+</li>
+<li>
+<p>Suportar outras APIs de câmbio (basta ajustar <code>EXTERNAL_API_URL</code> e tratamento de resposta).</p>
+</li>
+<li>Adicionar cache (Redis, in-memory) para reduzir chamadas externas e melhorar performance.</li>
+<li>Implementar validação de parâmetros (moedas válidas, formatos).</li>
+<li>Cobrir testes unitários/mocks para chamada à API externa.</li>
+</ul>
+<p>Esse documento deve servir como referência para entender o funcionamento interno, configuração e ponto de entrada do microsserviço de câmbio.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
