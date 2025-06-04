@@ -1,0 +1,36 @@
+site_name: Documentação EKS
+theme:
+  name: material
+
+nav:
+  - Individual:
+      - Inicio: ./individual/inicio.md
+      - API:
+          - Exchange: ./individual/exchange.md
+          - Product: ./individual/product.md
+          - Order: ./individual/order.md
+      - DevOps:
+          - Kubernetes: ./individual/mini.md
+          - Jenkins: ./individual/jenkins.md
+          - BottleNeck: ./individual/bottlenecks.md
+      - Repositorios e Checkpoints: ./individual/repositorios.md
+  - Projeto:
+      - Início: ./projeto/index.md
+      - AWS: ./projeto/AWS.md
+      - EKS: ./projeto/EKS.md
+      - Teste de Carga: ./projeto/TesteDeCarga.md
+      - Analise de Custo: ./projeto/analiseDeCusto.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tabbed
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js
